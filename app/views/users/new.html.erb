@@ -1,0 +1,15 @@
+<h1>Sign Up!</h1>
+
+<%=form_for @user do |s| %>
+
+<%=s.label :username %>
+<%=s.text_field :username %>
+<%=s.label :password %>
+<%=s.password_field :password %>
+<%=s.submit :Create! %>
+
+<% end %>
+
+<h3>
+	<%= link_to "Go Back, landlubber?", root_path %>
+</h3>

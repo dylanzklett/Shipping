@@ -1,0 +1,18 @@
+<h1>Acquired a new ship, eh matey?</h1>
+<%= form_for @boat do |q| %>
+	<%=q.label :name %>
+	<%=q.text_field :name %>
+	<%=q.label :Cargo %>
+	<%=q.text_field :cargo_cap %>
+	<%=q.label :Crew %>
+	<%=q.text_field :crew %>
+	<%=q.label :Location %>
+	<%=q.text_field :location %>
+	<%=q.submit :Confirm %>
+	<% end %>
+
+<h3>
+	<%= 
+	link_to "Return to Captain's Quarters", user_path(@user)
+	%>
+</h3>

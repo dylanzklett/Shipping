@@ -1,0 +1,41 @@
+<h1>Ahoy, <%= @user.username %>!</h1>
+
+
+
+<p>
+	<%= link_to "Home Page", users_path %>
+</p>
+<% if @user == current_user %>
+	<p>
+		<%= link_to "Add a new ship?", new_boat_path %>
+	</p>
+	<p>
+		<%= link_to "Feeling different, Cap'n?", edit_user_path %>
+	</p>
+	<p>
+		<%= link_to "Log out", session_path, method: :delete %>
+	</p>
+	<% else %>
+	<% end %>
+<h2>
+	The Glorious Fleet:
+</h2>
+<h4>
+	<% loakes = {DRCongo: 1, Kenya: 2, Tokyo: 3, France: 4, England: 5, India: 6, Antarctica: 7, "Bradley's House": 8} %>
+	<% @fleet.each do |f| %>
+		<h4><em>Name:</em>  <%= f.name %><p></h4>
+		<h4><em>Cargo Hold:</em>  <%= f.cargo_cap %><p></h4>
+		<h4><em>Crew:</em> <%=f.crew %></h4>
+		<h4><em>Docking At:</em>  <%= loakes.keys[(f.job.start.to_i) - 1]%></h4>
+
+		<h4><em>On Job Towards:</em> <%= loakes.keys[(f.job.end.to_i) - 1]%></h4>
+		<h4><em>Currently Carrying:</em> <%=f.job.cargo_description%></h4>
+		<h4>Cost of Current Job: <%=f.job.cost %></h4>
+		<h5>
+			<% if @user.id == current_user.id %>
+				<%= link_to "Changes to this ship, captain?", edit_boat_path(f.id) %>
+			<% else %>
+		</h5>
+			<% end %>
+<% end %>
+</h4>	

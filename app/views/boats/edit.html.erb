@@ -1,0 +1,51 @@
+<h1>
+	Inspecting: <%=@boat.name%>
+</h1>
+<h4>
+	What work do you want done on her, Cap'n?
+</h4>
+
+	<%= form_for @boat do |q| %>
+		<%=q.label :name %>
+		<%=q.text_field :name %>
+		<%=q.label :cargo_cap %>
+		<%=q.text_field :cargo_cap %>
+		<%=q.label :crew %>
+		<%=q.text_field :crew %>
+		<%=q.label :location %>
+		<%=q.text_field :location %>
+		<%=q.submit :Confirm %>
+		<% end %>
+
+<h4>
+	You've gotta be shippin' me! - (Give this boat a job)
+</h4>
+	<% loakes = {DRCongo: 1, Kenya: 2, Tokyo: 3, France: 4, England: 5, India: 6, Antarctica: 7, "Bradley's House": 8} %>
+
+	<%= form_for [@boat, @job] do |q| %>
+		<%=q.label :name %>
+		<%=q.text_field :name %>
+		<%=q.label :Start %>
+		<%=collection_select(:job, :start, loakes, :last, :first, prompt: true)%>
+		<%=q.label :End %>
+		<%=collection_select(:job, :end, loakes, :last, :first, prompt: true)%>
+		<%=q.label :Cost %>
+		<%=q.text_field :cost %>
+		<%=q.label :Cargo %>
+		<%=q.text_field :cargo_description %>
+		<%=q.submit :Confirm %>
+
+			<% end %>
+	
+
+
+
+<h3>
+	<%= 
+link_to "Return to Captain's Quarters", user_path(@user)
+%>
+</h3>
+
+<h3>
+	<%= link_to "Shall we send her back to the locker?", @boat, method: :delete %>
+</h3>

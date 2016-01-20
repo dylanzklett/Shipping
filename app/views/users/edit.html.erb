@@ -1,0 +1,21 @@
+<h1>Shave an' a Harrrrrr-cut</h1>
+<h2>Change yer Cap'n just how ye like!</h2>
+
+	<%= form_for @user do |f| %>
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+	<%= f.submit :Update %>
+	
+<% end %>
+
+<h3>
+	<%= 
+	link_to "Return to Captain's Quarters", user_path(@user)
+	%>
+</h3>
+
+<h3>
+	<%= link_to "Delete Yerself, Cap'n?", @user, method: :delete %>
+</h3>

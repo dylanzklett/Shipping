@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  cargo_cap: 1
+  crew: 1
+  location: MyString
+  references: 
+
+two:
+  name: MyString
+  cargo_cap: 1
+  crew: 1
+  location: MyString
+  references: 

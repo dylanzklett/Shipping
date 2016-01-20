@@ -1,0 +1,9 @@
+<h2>Here's who's in tune with the motion of the ocean:</h2
+
+<% @users.each do |s| %>
+<p>
+	<%=s.username %> 
+	< | | >
+	<%= link_to "View User", user_path(s) %>
+</p> 
+<% end %>

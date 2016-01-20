@@ -1,0 +1,20 @@
+<h1>You've gotta be shippin' me!</h1>
+<%= form_for @job do |q| %>
+	<%=q.label :name %>
+	<%=q.text_field :name %>
+	<%=q.label :Start %>
+	<%=q.text_field :start %>
+	<%=q.label :End %>
+	<%=q.text_field :End %>
+	<%=q.label :Cost %>
+	<%=q.text_field :cost %>
+	<%=q.label :Cargo %>
+	<%=q.text_field :cargo_description %>
+	<%=q.submit :Confirm %>
+	<% end %>
+
+<h3>
+	<%= 
+	link_to "Return to Captain's Quarters", user_path(@user)
+	%>
+</h3>
