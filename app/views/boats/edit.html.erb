@@ -5,7 +5,7 @@
 	What work do you want done on her, Cap'n?
 </h4>
 
-	<%= form_for @boat do |q| %>
+	<%= form_for @boat, html: {multipart: true} do |q| %>
 		<%=q.label :name %>
 		<%=q.text_field :name %>
 		<%=q.label :cargo_cap %>
@@ -14,6 +14,8 @@
 		<%=q.text_field :crew %>
 		<%=q.label :location %>
 		<%=q.text_field :location %>
+		<%=q.label :Picture %>
+		<%=q.file_field :avatar %>
 		<%=q.submit :Confirm %>
 		<% end %>
 

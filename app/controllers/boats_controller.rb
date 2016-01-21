@@ -27,11 +27,10 @@ class BoatsController < ApplicationController
   def update
     @boat = Boat.find(params[:id])
     @user = @boat.user_id
-    @boat.update(boat_params)
-    @job = @boat.job.last
-    @job.update(job_params)
-    @boat.save
-    if @job.save
+    # @job = @boat.job
+    # @job.update(job_params)
+    # @boat.save
+    if @boat.update(boat_params)
       redirect_to user_path(@user)
     else
       redirect_to root_path, flash[:alert] = "Are ye daft? We can't take a job like that!"
@@ -50,7 +49,7 @@ class BoatsController < ApplicationController
 
   private 
   def boat_params
-    params.require(:boat).permit(:name, :cargo_cap, :crew, :location)
+    params.require(:boat).permit(:name, :cargo_cap, :crew, :location, :avatar)
   end
 
   def job_params

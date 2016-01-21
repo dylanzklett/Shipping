@@ -23,8 +23,9 @@
 <h4>
 	<% loakes = {DRCongo: 1, Kenya: 2, Tokyo: 3, France: 4, England: 5, India: 6, Antarctica: 7, "Bradley's House": 8} %>
 	<% @fleet.each do |f| %>
-		<h4><em>Name:</em>  <%= f.name %><p></h4>
-		<h4><em>Cargo Hold:</em>  <%= f.cargo_cap %><p></h4>
+		<h4><%= image_tag f.avatar.url(:medium)%></h4>
+		<h4><em>Name:</em>  <%= f.name %></h4>
+		<h4><em>Cargo Hold:</em>  <%= f.cargo_cap %></h4>
 		<h4><em>Crew:</em> <%=f.crew %></h4>
 		<h4><em>Docking At:</em>  <%= loakes.keys[(f.job.start.to_i) - 1]%></h4>
 

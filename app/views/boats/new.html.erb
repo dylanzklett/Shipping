@@ -1,5 +1,5 @@
 <h1>Acquired a new ship, eh matey?</h1>
-<%= form_for @boat do |q| %>
+<%= form_for @boat, :html => { :multipart => true } do |q| %>
 	<%=q.label :name %>
 	<%=q.text_field :name %>
 	<%=q.label :Cargo %>
@@ -8,6 +8,8 @@
 	<%=q.text_field :crew %>
 	<%=q.label :Location %>
 	<%=q.text_field :location %>
+	<%=q.label :Picture %>
+	<%=q.file_field :avatar %>
 	<%=q.submit :Confirm %>
 	<% end %>
 
